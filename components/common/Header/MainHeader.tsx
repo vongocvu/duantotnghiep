@@ -3,6 +3,7 @@ import { Search } from "../Search";
 import { Location } from "../Location";
 import { Breakpoints } from "@/helpers/Breakpoints";
 import Line from "@/components/helpers/Line";
+import { Logo } from "../Logo";
 
 const MainHeader = () => {
   const { Mobile_, Tablet_, Laptop_, Desktop_ } = Breakpoints();
@@ -49,29 +50,7 @@ const MainHeader = () => {
             </Box>
           )}
 
-          <Box sx={{ display: "flex" }}>
-            <Box
-              sx={{
-                fontSize: "40px",
-                fontWeight: "500",
-                color: "#0da487",
-                display: "flex",
-              }}
-            >
-              Fast
-              <Box
-                sx={{
-                  fontSize: "40px",
-                  fontWeight: "500",
-                  color: "black",
-                }}
-              >
-                kart
-              </Box>
-              .
-            </Box>
-          </Box>
-
+          <Logo></Logo>
           {Mobile_ && (
             <Box
               sx={{
