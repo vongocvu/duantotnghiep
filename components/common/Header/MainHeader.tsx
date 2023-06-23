@@ -10,7 +10,7 @@ import {
   ListIcon,
   PhoneIcon,
 } from "@/datas/icons";
-
+import { Logo } from "../Logo";
 
 const MainHeader = () => {
   const { Mobile_, Tablet_, Laptop_, Desktop_ } = Breakpoints();
