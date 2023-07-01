@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Button_ } from "../Banner/Button";
+import { Button_ } from "../Button";
 
 const Main = () => {
   return (

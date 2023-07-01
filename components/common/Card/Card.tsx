@@ -12,7 +12,12 @@ export interface InputCard {
 
 const CardStyle = styled.div`
   border: 1px solid #ccc;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Card = ({ image, name, price, id, className }: InputCard) => {
@@ -27,9 +32,14 @@ const Card = ({ image, name, price, id, className }: InputCard) => {
           alt={name}
         />
       </Box>
-      <Box className="text-center">
+      <Box
+        sx={{
+          padding: "10px 0",
+        }}
+        className="text-center"
+      >
         <Box className="font-medium text-md">{name}</Box>
-        <Box className="text-[#0da487] font-bold">${price}</Box>
+        <Box className="text-[#0da487] font-bold">$ {price}</Box>
       </Box>
     </CardStyle>
   );
