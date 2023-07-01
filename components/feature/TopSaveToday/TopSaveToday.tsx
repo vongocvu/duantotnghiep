@@ -7,7 +7,13 @@ export interface ProductInput {
 
 const TopSaveToday = ({ products }: ProductInput) => {
   return (
-    <Box className="grid grid-cols-4  sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-[10px]">
+    <Box
+      sx={{
+        borderTop: "1px solid #ccc",
+        borderLeft: "1px solid #ccc",
+      }}
+      className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12"
+    >
       {products?.map((product) => (
         <Card
           className="col-span-2"

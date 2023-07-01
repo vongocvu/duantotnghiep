@@ -1,5 +1,5 @@
 import { SellerBanner } from "@/components/common/Banner";
-import { Button_ } from "@/components/common/Banner/Button";
+import { Button_ } from "@/components/common/Button";
 import { TopHeader, MainHeader } from "@/components/common/Header";
 import { NavMain } from "@/components/common/NavBar";
 import { DealIcon, ListIcon } from "@/datas/icons";
@@ -21,7 +21,13 @@ export default function Home({ test }: InputProps) {
     <Box>
       <TopHeader />
       <MainHeader />
-      <Container maxWidth="desktop" className="flex justify-between py-5">
+      <Container
+        sx={{
+          display: "flex !important",
+        }}
+        maxWidth="desktop"
+        className="flex justify-between py-5"
+      >
         <Button_
           sx={{
             backgroundColor: "#0da487",
@@ -46,8 +52,13 @@ export default function Home({ test }: InputProps) {
           text="Deal Today"
         />
       </Container>
-      <Container className="grid grid-cols-12 gap-[20px]">
-        <Box className="col-span-12 sm:col-span-12 md:col-span-6 xl:col-span-3">
+      <Container
+        sx={{
+          display: "grid !important",
+        }}
+        className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-12 gap-[20px]"
+      >
+        <Box className="col-span-3">
           <SellerBanner
             image="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/banner/4.jpg"
             percent="5% OFF"
@@ -55,7 +66,7 @@ export default function Home({ test }: InputProps) {
             subtext="Daily Essentials Eggs & Dairy"
           />
         </Box>
-        <Box className="col-span-12 sm:col-span-12 md:col-span-6 xl:col-span-3">
+        <Box className="col-span-3">
           <SellerBanner
             image="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/banner/5.jpg"
             percent="5% OFF"
@@ -63,7 +74,7 @@ export default function Home({ test }: InputProps) {
             subtext="Daily Essentials Eggs & Dairy"
           />
         </Box>
-        <Box className="col-span-12 sm:col-span-12 md:col-span-6 xl:col-span-3">
+        <Box className="col-span-3">
           <SellerBanner
             image="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/banner/6.jpg"
             percent="5% OFF"
@@ -71,7 +82,7 @@ export default function Home({ test }: InputProps) {
             subtext="Daily Essentials Eggs & Dairy"
           />
         </Box>
-        <Box className="col-span-12 sm:col-span-12 md:col-span-6 xl:col-span-3">
+        <Box className="col-span-3">
           <SellerBanner
             image="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/banner/7.jpg"
             percent="5% OFF"
@@ -102,98 +113,98 @@ export const getStaticProps: GetStaticProps = () => {
       price: 2669,
     },
     {
-      id: "test",
+      id: "test1",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/8.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test2",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/7.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test3",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/6.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test4",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/5.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test5",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/4.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test6",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/3.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test7",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/2.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test8",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/1.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test9",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/10.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test10",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/11.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test11",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/12.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test12",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/13.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test13",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/14.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },
     {
-      id: "test",
+      id: "test14",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/15.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
