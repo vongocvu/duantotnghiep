@@ -10,7 +10,7 @@
   font-family: "Public Sans", sans-serif;
 }
 
-.slick-track {
+.BannerSilde .slick-track {
   display: flex;
   gap: 10px;
 }

@@ -15,9 +15,10 @@ export interface InputCard {
 }
 
 const CardStyle = styled.div`
-  border: 1px solid #ccc;
-  border-left: 1px solid transparent;
-  border-top: 1px solid transparent;
+  min-height: 400px;
+  max-height: 400px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -30,11 +31,11 @@ const Card = ({ image, name, price, id, className }: InputCard) => {
       <Box sx={{
         flex: "1",
         position: "relative",
-      }} className="p-2  flex justify-center items-center">
+      }} className="p-2 flex justify-center items-center">
         <Image
-          width="100"
-          height="100"
-          className="w-full object-contain imageProduct"
+          width="150"
+          height="150"
+          className="object-contain imageProduct"
           src={image}
           alt={name}
         />
