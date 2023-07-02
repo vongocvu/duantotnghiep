@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { ReactNode, useEffect, useRef, useState } from "react";
@@ -6,12 +6,11 @@ import Link from "next/link";
 import styled from "@emotion/styled";
 
 export interface NavItemInput {
-  icon: ReactNode;
+  icon?: ReactNode;
   title: string;
   data_drops?: any[];
   dropdown?: boolean;
   path?: string;
-  isTab?: string;
 }
 
 const NavItemStyled = styled.div`
@@ -34,17 +33,16 @@ const NavContent = ({ icon, title }: NavItemInput) => {
     >
       <Box
         sx={{
-          padding: "10px",
+          padding: "12px 10px",
         }}
       >
         {icon}
       </Box>
       <Box
         sx={{
-          fontSize: "14px",
-          fontWeight: "550",
+          fontSize: "15px",
           flex: "1",
-          letterSpacing: "0.7px",
+          letterSpacing: "0.5px",
         }}
       >
         {title}
@@ -53,14 +51,7 @@ const NavContent = ({ icon, title }: NavItemInput) => {
   );
 };
 
-const NavItem = ({
-  icon,
-  title,
-  data_drops,
-  dropdown,
-  path,
-  isTab,
-}: NavItemInput) => {
+const NavItem = ({ icon, title, data_drops, dropdown, path }: NavItemInput) => {
   const [dropIcon, setDropIcon] = useState(<ChevronRightOutlinedIcon />);
   const [isDropdown, setIsDropdown] = useState(false);
 
@@ -68,12 +59,7 @@ const NavItem = ({
 
   const HandleDroper = () => {
     setIsDropdown(!isDropdown);
-    console.log(DropRef.current?.offsetHeight);
   };
-
-  useEffect(() => {
-    isTab !== title && setIsDropdown(false);
-  }, [isTab, title]);
 
   useEffect(() => {
     isDropdown
@@ -86,7 +72,7 @@ const NavItem = ({
       <NavItemStyled>
         <Box
           sx={{
-            marginBottom: "10px",
+            marginBottom: "5px",
           }}
         >
           <Link href={`/admin/${path}`}>
@@ -104,6 +90,7 @@ const NavItem = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            marginBottom: "5px",
             backgroundColor: `${isDropdown && "rgba(255, 255, 255, 0.06)"}`,
           }}
           onClick={HandleDroper}
@@ -124,12 +111,9 @@ const NavItem = ({
         ref={DropRef}
         sx={{
           width: "100%",
-          height: `${isDropdown ? "100px" : "0px"}`,
-          transition: "all .5s ease-out",
+          height: `${isDropdown ? "auto" : "0px"}`,
           overflow: "hidden",
           color: "white",
-          paddingTop: "10px",
-          fontSize: "14px",
           fontWeight: "500",
         }}
       >
@@ -138,26 +122,37 @@ const NavItem = ({
             <Link href={`/admin/${data.path}`} key={index}>
               <Box
                 sx={{
-                  padding: "5px 15px",
+                  height: "48.8px",
+                  padding: "0 15px",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <Typography
+                <Box
                   sx={{
-                    fontWeight: "bold",
-                    margin: "0 15px",
+                    width: "10px",
+                    height: "100%",
+                    marginRight: "18px",
+                    position: "relative",
+                    "&::after": {
+                      content: "' '",
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "6px",
+                      borderTop: "2px solid #fff",
+                    },
                   }}
-                >
-                  -
-                </Typography>
-                <Typography
+                ></Box>
+                <Box
                   sx={{
-                    letterSpacing: "0.3px",
+                    fontSize: "15px",
+                    letterSpacing: "0.5px",
                   }}
                 >
                   {data.title}
-                </Typography>
+                </Box>
               </Box>
             </Link>
           ))}
@@ -167,3 +162,4 @@ const NavItem = ({
 };
 
 export default NavItem;
+export { NavContent };

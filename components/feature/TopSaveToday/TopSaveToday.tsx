@@ -12,7 +12,7 @@ const TopSaveToday = ({ products }: ProductInput) => {
         borderTop: "1px solid #ccc",
         borderLeft: "1px solid #ccc",
       }}
-      className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12"
+      className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10"
     >
       {products?.map((product) => (
         <Card

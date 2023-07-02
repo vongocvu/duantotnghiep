@@ -4,9 +4,9 @@ import Box from "@mui/material/Box";
 import { Breakpoints } from "@/helpers/Breakpoints";
 
 const Search = () => {
-  const { Mobile_, Tablet_, Laptop_, Desktop_ } = Breakpoints();
+  const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } = Breakpoints();
 
-  if (!Tablet_) return <SearchIcon />;
+  if (Desktop_) return <SearchIcon />;
 
   return (
     <Box

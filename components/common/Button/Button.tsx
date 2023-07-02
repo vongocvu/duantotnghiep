@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { ButtonProps } from "@mui/material/Button";
+import { Box } from "@mui/material";
 
 export interface PropsInput extends ButtonProps {
-  text: string;
+  text?: string;
   className?: string;
   sx?: Object;
   startIcon?: React.ReactNode;
@@ -13,7 +14,7 @@ export interface PropsInput extends ButtonProps {
 }
 
 const MyButton_ = styled.button`
-  padding: 15px 20px;
+  padding: 10px 20px;
   color: black;
   border-radius: 5px;
   display: flex;
@@ -21,6 +22,7 @@ const MyButton_ = styled.button`
 `;
 
 const Button_ = (props: PropsInput) => {
+
   return (
     <MyButton_
       className={props.className}
@@ -29,7 +31,11 @@ const Button_ = (props: PropsInput) => {
       style={props.sx}
     >
       {props.startIcon}
+      <Box sx={{
+        marginLeft: `${ props?.text != "" && "10px"}`
+      }}>
       {props.text}
+      </Box>
     </MyButton_>
   );
 };

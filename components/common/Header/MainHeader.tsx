@@ -13,45 +13,50 @@ import {
 import { Logo } from "../Logo";
 
 const MainHeader = () => {
-  const { Mobile_, Tablet_, Laptop_, Desktop_ } = Breakpoints();
+  const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } =
+    Breakpoints();
 
   return (
     <Box
       sx={{
         position: "sticky",
+        boxShadow: "0 3px 10px rgba(34,34,34,0.05)",
         top: "0",
         left: "0",
         right: "0",
         backgroundColor: "white",
-        boxShadow: "0 8px 10px rgba(34,34,34,0.05)",
         zIndex: "10",
       }}
     >
-      <Container maxWidth="desktop">
+      <Container>
         <Box
           sx={{
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "15px 0",
+            padding: `${Mobile_ ? "8px 0" : "15px 0"}`,
           }}
         >
-          {!Tablet_ && (
-            <Box>
+          {(Mobile_ || Tablet_ ) && (
+            <Box sx={{
+              marginRight: "10px"
+            }}>
               <ListIcon />
             </Box>
           )}
 
-          <Logo></Logo>
-          {Mobile_ && (
+          <Logo />
+          {!Mobile_ && (
             <Box
               sx={{
                 display: "flex",
                 flex: 1,
                 alignItems: "center",
-                justifyContent: `${Tablet_ ? "center" : "space-between"}`,
-                margin: `${!Tablet_ && "0 10px"}`,
+                justifyContent: `${
+                  !Desktop_ ? "center" : "space-between"
+                }`,
+                margin: `${!Laptop_ && "0 10px"}`,
               }}
             >
               <Location />
@@ -59,7 +64,7 @@ const MainHeader = () => {
             </Box>
           )}
 
-          {Mobile_ && (
+          {(!Mobile_ || !Tablet_)  && (
             <Box className="flex h-[50px]">
               <Box
                 sx={{
@@ -73,10 +78,10 @@ const MainHeader = () => {
                     alignItems: "center",
                   }}
                 >
-                  {!Tablet_ && <Line />}
+                  {!Mobile_ && <Line />}
                   <PhoneIcon />
                 </Box>
-                {Desktop_ && (
+                {MoreScreen_ && (
                   <Box className="ml-[15px]">
                     <span>24/7 Delivery</span>
                     <Typography
@@ -124,7 +129,7 @@ const MainHeader = () => {
                 >
                   <AccountIcon />
                 </Box>
-                {Desktop_ && (
+                {MoreScreen_ && (
                   <Box className="ml-[15px]">
                     <span>Hello,</span>
                     <Typography
@@ -140,7 +145,7 @@ const MainHeader = () => {
             </Box>
           )}
 
-          {!Mobile_ && <AccountIcon />}
+          {Mobile_ && <AccountIcon />}
         </Box>
       </Container>
     </Box>

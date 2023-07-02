@@ -7,7 +7,7 @@ export interface InputProps {
 
 const TitleSection = ({ maintext, subtext }: InputProps) => {
   return (
-    <Box className="flex py-10">
+    <Box className="flex pb-10">
       <Box>
         <Typography
           sx={{

@@ -3,23 +3,20 @@ import BlurOnIcon from "@mui/icons-material/BlurOn";
 import Image from "next/image";
 import NavItem from "./NavItem";
 import { NavAdmin } from "@/datas/NavBar";
-import { useState } from "react";
+import Link from "next/link";
 
 const Admin = () => {
-  const [curentTab, setCurentIstab] = useState("");
-
-  const HandleTab = (tab: string) => {
-    setCurentIstab(tab);
-  };
-
   return (
     <Box
       sx={{
         width: "280px",
-        height: "100%",
+        height: "100vh",
         background: "linear-gradient(-45deg, #0da487, #009289, #ffa53b)",
         backgroundSize: "400% 400%",
-        padding: "0 20px",
+        padding: "0 15px",
+        paddingBottom: "10px",
+        display: "flex",
+        flexDirection: "column",
         animation: "myEffect 15s ease infinite",
         "@keyframes myEffect": {
           "0%": {
@@ -46,12 +43,14 @@ const Admin = () => {
             padding: "30px 10px",
           }}
         >
-          <Image
-            width="150"
-            height="100"
-            src="https://themes.pixelstrap.com/fastkart/back-end/assets/images/logo/full-white.png"
-            alt="logo"
-          />
+          <Link href={`/admin`}>
+            <Image
+              width="150"
+              height="100"
+              src="https://themes.pixelstrap.com/fastkart/back-end/assets/images/logo/full-white.png"
+              alt="logo"
+            />
+          </Link>
         </Box>
         <BlurOnIcon
           sx={{
@@ -60,24 +59,35 @@ const Admin = () => {
           }}
         />
       </Box>
-      <Box>
+
+      <Box
+        sx={{
+          flex: "1",
+          overflowY: "scroll",
+          "&::-webkit-scrollbar": {
+            width: "1px",
+            backgroundColor: "transparent",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "transparent",
+          },
+          scrollBehavior: "smooth",
+        }}
+      >
         {NavAdmin.map((data, index) => (
-          <Box key={index} onClick={() => HandleTab(data.title)}>
+          <Box key={index}>
             {data.dropdown ? (
               <NavItem
                 icon={data.icon}
                 title={data.title}
                 dropdown={true}
                 data_drops={data.drop_datas}
-                isTab={curentTab}
               />
             ) : (
-              <NavItem
-                icon={data.icon}
-                title={data.title}
-                path={data.path}
-                isTab={curentTab}
-              />
+              <NavItem icon={data.icon} title={data.title} path={data.path} />
             )}
           </Box>
         ))}
