@@ -4,7 +4,8 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import { Breakpoints } from "@/helpers/Breakpoints";
 
 const Location = () => {
-  const { Mobile_, Tablet_, Laptop_, Desktop_ } = Breakpoints();
+  const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } =
+    Breakpoints();
 
   return (
     <Box
@@ -35,19 +36,19 @@ const Location = () => {
           }}
         />
       </Box>
-      {Laptop_ && (
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            color: "#0da487",
-            fontSize: "17px",
-            margin: " 0 10px",
-          }}
-        >
-          Your location
-          <KeyboardArrowDownOutlinedIcon />
-        </Typography>
-      )}
+      {!Desktop_ && 
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              color: "#0da487",
+              fontSize: "17px",
+              margin: " 0 10px",
+            }}
+          >
+            Your location
+            <KeyboardArrowDownOutlinedIcon />
+          </Typography>
+        }
     </Box>
   );
 };

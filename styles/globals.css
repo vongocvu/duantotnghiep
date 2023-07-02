@@ -1,9 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import "react-toastify/dist/ReactToastify.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 
 * {
   font-family: "Public Sans", sans-serif;
+}
+
+.slick-track {
+  display: flex;
+  gap: 10px;
+}
+
+.cardProduct {
+  overflow:  hidden;
+  cursor: pointer;
+}
+
+.imageProduct {
+  transition: transform .3s ease;
+}
+
+.cardProduct:hover .imageProduct {
+  transform: scale(1.1);
+}
+
+.detailCard {
+  overflow: hidden;
+  height: 0px;
+}
+
+.cardProduct:hover .detailCard {
+  height: 50px;
+  border: 1px solid #d3d2d2;
+  animation: showDetail .3s ease-in;
+}
+
+
+@keyframes showDetail {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) translateX(-50%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) translateX(-50%)
+  }
 }

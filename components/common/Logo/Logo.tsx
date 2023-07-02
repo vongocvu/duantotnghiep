@@ -11,6 +11,7 @@ const Logo = () => {
             fontWeight: "500",
             color: "#0da487",
             display: "flex",
+            marginRight: "10px"
           }}
         >
           Fast

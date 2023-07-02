@@ -5,6 +5,8 @@ import FormatListNumberedRtlOutlinedIcon from "@mui/icons-material/FormatListNum
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import MovieOutlinedIcon from "@mui/icons-material/MovieOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
+import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
 
 export const NavAdmin = [
   {
@@ -112,5 +114,17 @@ export const NavAdmin = [
         path: "Oders_tracking",
       },
     ],
+  },
+  {
+    icon: <AssessmentOutlinedIcon />,
+    title: "Report",
+    path: "Report",
+    dropdown: false,
+  },
+  {
+    icon: <AutoStoriesOutlinedIcon />,
+    title: "List Page",
+    path: "List_page",
+    dropdown: false,
   },
 ];

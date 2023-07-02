@@ -11,8 +11,8 @@ export interface InputBanner {
 
 const SellerBanner = ({ image, ...text }: InputBanner) => {
   return (
-    <Box className="relative rounded-[5px] overflow-hidden">
-      <Box className="absolute w-[65%] h-[40%] bg-white left-0 top-[15%] rounded-tr-[50px] rounded-br-[50px] p-[10px]">
+    <Box className="relative rounded-[5px] overflow-hidden cursor-pointer">
+      <Box className="absolute  md:w-[80%] md:h-[45%] w-[65%] h-[40%] bg-white left-0 top-[15%] rounded-tr-[50px] rounded-br-[50px] p-[10px] z-[10]">
         <p className="text-red-500"> {text?.percent}</p>
         <p className="font-bold text-lg"> {text?.maintext}</p>
         <p className="text-sm">{text?.subtext}</p>
@@ -20,7 +20,10 @@ const SellerBanner = ({ image, ...text }: InputBanner) => {
       <Image
         width={"100"}
         height={"100"}
-        className="w-full h-full object-contain"
+        style={{
+          transition: "all .5s ease-out",
+        }}
+        className="w-full h-full object-contain hover:scale-[1.2] hover:rotate-[5deg] hover:opacity-[0.7]"
         src={image}
         alt={image}
       />
