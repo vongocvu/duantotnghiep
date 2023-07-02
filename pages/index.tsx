@@ -79,7 +79,7 @@ export default function Home({ test, NavCategory }: InputProps) {
       <Container sx={{
         marginTop: "20px"
       }}>
-        <Slider {...settings}>
+        <Slider {...settings} className="BannerSilde">
           <Box>
             <SellerBanner
               image="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/banner/4.jpg"
@@ -117,19 +117,21 @@ export default function Home({ test, NavCategory }: InputProps) {
 
       <Container
         sx={{
-          display: "flex",
+          display: "grid",
           gap: "20px",
           marginTop: "40px",
         }}
+        className={`grid ${!Desktop_ ? "grid-cols-12" : "grid-cols-9"} `}
       >
-        {MoreScreen_ && (
-          <Box
+        {!Desktop_ && (
+          <Box className="col-span-3">
+            <Box
             sx={{
-              width: "380px",
-              height: "100%",
+              width: "100%",
               backgroundColor: "#f8f8f8",
+              border: "1px dotted #ccc",
               borderRadius: "5px",
-              padding: "50px",
+              padding: "30px",
             }}
           >
             <Box
@@ -139,23 +141,20 @@ export default function Home({ test, NavCategory }: InputProps) {
                 marginBottom: "20px",
               }}
             >
-              Category
+              - Category -
             </Box>
             <NavClient datas={NavCategory} />
           </Box>
+          </Box>
         )}
 
-        <Box
-          sx={{
-            flex: "1",
-          }}
-        >
+        <Box className="col-span-9 pb-10">
           <TitleSection
             maintext="Top Save Today"
             subtext="Don't miss this opportunity at a special discount just for this week."
           />
-          <TopSaveToday products={test} />
-        </Box>
+              <TopSaveToday products={test} />
+            </Box>
       </Container>
     </Box>
   );
@@ -315,13 +314,6 @@ export const getStaticProps: GetStaticProps = () => {
       id: "test13",
       image:
         "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/14.png",
-      name: "Raw Mutton Leg, Packaging 5 Kg",
-      price: 2669,
-    },
-    {
-      id: "test14",
-      image:
-        "https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/15.png",
       name: "Raw Mutton Leg, Packaging 5 Kg",
       price: 2669,
     },

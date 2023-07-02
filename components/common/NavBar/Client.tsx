@@ -1,7 +1,5 @@
 import { Box } from "@mui/material";
 import Link from "next/link";
-import { ReactNode } from "react";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Image from "next/image";
 
 export interface CategoryListInput {
