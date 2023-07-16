@@ -12,7 +12,7 @@ export const NavAdmin = [
   {
     icon: <HomeOutlinedIcon />,
     title: "Dashboard",
-    path: "Dashboard",
+    path: "dashboard",
     dropdown: false,
   },
   {

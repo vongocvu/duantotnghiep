@@ -1,7 +1,13 @@
+import AdminFooter from "@/components/common/Footer/AdminFooter";
+import AdminHeader from "@/components/common/Header/AdminHeader";
 import { NavAdmin } from "@/components/common/NavBar";
+import { Breakpoints } from "@/helpers/Breakpoints";
 import Box from "@mui/material/Box";
+import { GetStaticProps } from "next";
 
-const index = () => {
+const Dashboard = (props: any) => {
+  const { Tablet_ } = Breakpoints();
+
   return (
     <Box
       sx={{
@@ -9,9 +15,29 @@ const index = () => {
         height: "100vh",
       }}
     >
-      <NavAdmin />
+      {!Tablet_ && <NavAdmin />}
+      <Box
+        sx={{
+          width: "calc(100% -263px)",
+          height: "100vh",
+          marginTop: "92px",
+          backgroundColor: "#f9f9f6",
+        }}
+      >
+        <AdminHeader notifications={props}></AdminHeader>
+        <AdminFooter></AdminFooter>
+      </Box>
+      <Box></Box>
     </Box>
   );
 };
+export const getStaticProps: GetStaticProps = () => {
+  const notifications = ["hello", "hi"];
 
-export default index;
+  return {
+    props: {
+      notifications,
+    },
+  };
+};
+export default Dashboard;

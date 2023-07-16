@@ -18,6 +18,9 @@ const Admin = () => {
         display: "flex",
         flexDirection: "column",
         animation: "myEffect 15s ease infinite",
+        position: "fixed",
+        top: 0,
+        left: 0,
         "@keyframes myEffect": {
           "0%": {
             backgroundPosition: "0% 50%",

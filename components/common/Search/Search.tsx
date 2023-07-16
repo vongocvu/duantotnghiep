@@ -3,6 +3,10 @@ import { InputBase } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Breakpoints } from "@/helpers/Breakpoints";
 
+export interface InputBase {
+
+}
+
 const Search = () => {
   const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } = Breakpoints();
 
@@ -11,7 +15,7 @@ const Search = () => {
   return (
     <Box
       sx={{
-        width: "600px",
+        width: "100%",
         height: "50px",
         display: "flex",
         borderRadius: "5px",

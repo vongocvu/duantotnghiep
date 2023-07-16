@@ -3,18 +3,11 @@ import { Search } from "../Search";
 import { Location } from "../Location";
 import { Breakpoints } from "@/helpers/Breakpoints";
 import Line from "@/components/helpers/Line";
-import {
-  AccountIcon,
-  CartIcon,
-  HeartIcon,
-  ListIcon,
-  PhoneIcon,
-} from "@/datas/icons";
+import { AccountIcon, CartIcon, HeartIcon, ListIcon, PhoneIcon } from "@/datas/icons";
 import { Logo } from "../Logo";
 
 const MainHeader = () => {
-  const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } =
-    Breakpoints();
+  const { Mobile_, Tablet_, Laptop_, Desktop_, LargeDesktop_, MoreScreen_ } = Breakpoints();
 
   return (
     <Box
@@ -38,10 +31,12 @@ const MainHeader = () => {
             padding: `${Mobile_ ? "8px 0" : "15px 0"}`,
           }}
         >
-          {(Mobile_ || Tablet_ ) && (
-            <Box sx={{
-              marginRight: "10px"
-            }}>
+          {(Mobile_ || Tablet_) && (
+            <Box
+              sx={{
+                marginRight: "10px",
+              }}
+            >
               <ListIcon />
             </Box>
           )}
@@ -53,18 +48,18 @@ const MainHeader = () => {
                 display: "flex",
                 flex: 1,
                 alignItems: "center",
-                justifyContent: `${
-                  !Desktop_ ? "center" : "space-between"
-                }`,
+                justifyContent: `${!Desktop_ ? "center" : "space-between"}`,
                 margin: `${!Laptop_ && "0 10px"}`,
               }}
             >
               <Location />
-              <Search />
+              <Box sx={{ width: "600px" }}>
+                <Search />
+              </Box>
             </Box>
           )}
 
-          {(!Mobile_ || !Tablet_)  && (
+          {(!Mobile_ || !Tablet_) && (
             <Box className="flex h-[50px]">
               <Box
                 sx={{
